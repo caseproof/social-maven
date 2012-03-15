@@ -71,20 +71,11 @@ if( is_array(spl_autoload_functions()) and
 spl_autoload_register('soma_autoloader');
 
 // Gotta load the language before everything else
-//SomaAppController::load_language();
+SomaAppController::load_language();
 
 /***** SETUP OPTIONS OBJECT *****/
 global $soma_options;
-$soma_options = get_option('soma_options');
+$soma_options = SomaOptions::fetch();
 
-// If unserializing didn't work
-if(!$soma_options or !is_array($soma_options))
-{
-  $soma_options = array();
-  SomaOptions::set_defaults($soma_options); // Sets defaults for unset options
-  update_option('soma_options',$soma_options);
-}
-else
-  SomaOptions::set_defaults($soma_options); // Sets defaults for unset options
-
+SomaAppController::load_hooks();
 SomaButtonsController::load_hooks();
