@@ -13,7 +13,7 @@ class SomaButtonsHelper {
     require SOMA_VIEWS_PATH . '/buttons/twitter_load.php';
   }
 
-  public static function facebook_button($url,$layout='box_count',$width='0',$send=false,$faces=false,$font='arial') {
+  public static function facebook_button($url,$layout='box_count',$width='50',$send=false,$faces=false,$font='arial') {
     require SOMA_VIEWS_PATH . '/buttons/facebook.php';
   }
 

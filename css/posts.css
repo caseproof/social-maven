@@ -14,9 +14,19 @@
 }
 
 .soma-valigntop {
-  padding-bottom: 5px;
+  padding-bottom: 2px;
 }
 
 .soma-valignbottom {
-  padding-top: 5px;
+  padding-top: 2px;
+}
+
+.soma-vertical .fb-like {
+  top: -3px;
+  left: 0;
+}
+
+.soma-horizontal .fb-like {
+  top: -3px;
+  left: 0;
 }

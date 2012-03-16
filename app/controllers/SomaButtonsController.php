@@ -12,7 +12,7 @@ class SomaButtonsController {
     
     if( $soma_options->soma_enabled and
         ( $soma_options->display_on_posts and $post->post_type == 'post' ) or
-        ( $soma_options->display_on_pages and $post->post_type == 'post' ) or
+        ( $soma_options->display_on_pages and $post->post_type == 'page' ) or
         ( $soma_options->display_on_cpts and 
           !in_array( $post->post_type, array( 'page', 'post', 'revision', 'attachment', 'nav_menu_item' ) ) ) ) {
       
@@ -33,6 +33,7 @@ class SomaButtonsController {
         $googleplus_layout = 'medium';
         $linkedin_layout = 'right';
         $pinterest_layout = 'horizontal';
+        $classes .= " soma-horizontal";
       }
       else if( $soma_options->button_style=='vertical' ) {
         $facebook_layout = 'box_count';
@@ -40,6 +41,7 @@ class SomaButtonsController {
         $googleplus_layout = 'tall';
         $linkedin_layout = 'top';
         $pinterest_layout = 'vertical';
+        $classes .= " soma-vertical";
       }
       
       if( $soma_options->button_counts ) {
@@ -51,28 +53,14 @@ class SomaButtonsController {
         $twitter_layout = 'none';
         $linkedin_layout = 'none';
         $pinterest_layout = 'none';
+        $classes .= " soma-nocount";
       }
       
       $url = get_permalink($post->ID);
       $description = $post->post_title;
       
       ob_start();
-      ?>
-      <div class="<?php echo $classes; ?>">
-        <?php
-        if(isset($soma_options->facebook) and $soma_options->facebook)
-          SomaButtonsHelper::facebook_button($url,$facebook_layout);
-        if(isset($soma_options->twitter) and $soma_options->twitter)
-          SomaButtonsHelper::twitter_button($url,$description,'',$twitter_layout);
-        if(isset($soma_options->googleplus) and $soma_options->googleplus)
-          SomaButtonsHelper::googleplus_button($url,$googleplus_layout,$googleplus_annotation);
-        if(isset($soma_options->linkedin) and $soma_options->linkedin)
-          SomaButtonsHelper::linkedin_button($url,$linkedin_layout);
-        if(isset($soma_options->pinterest) and $soma_options->pinterest)
-          SomaButtonsHelper::pinterest_button($url,$description,'',$pinterest_layout);
-        ?>
-      </div>
-      <?php
+      require SOMA_VIEWS_PATH . '/buttons/buttons.php'; 
       $ob_contents = ob_get_contents();
       if($soma_options->vertical_pos=='top')
         $content = $ob_contents . $content;
@@ -86,12 +74,7 @@ class SomaButtonsController {
       static $soma_js_loaded;
       if(!isset($soma_js_loaded)) { // Just do this once
         ob_start();
-        if(isset($soma_options->facebook) and $soma_options->facebook)
-          SomaButtonsHelper::facebook_load();
-        if(isset($soma_options->twitter) and $soma_options->twitter)
-          SomaButtonsHelper::twitter_load();
-        if(isset($soma_options->googleplus) and $soma_options->googleplus)
-          SomaButtonsHelper::googleplus_load();
+        require SOMA_VIEWS_PATH . '/buttons/load.php'; 
         $content = ob_get_contents() . $content;
         ob_end_clean();
 
@@ -110,9 +93,6 @@ class SomaButtonsController {
     $site_name = get_option('blogname');
     $description = $post->post_excerpt;
 
-    if(isset($soma_options['buttons']['facebook']) and $soma_options['buttons']['facebook'] === true)
-      SomaButtonsHelper::facebook_head($url,$title,$site_name,$type='website',$image='',$admins='0');
-    if(isset($soma_options['buttons']['googleplus']) and $soma_options['buttons']['googleplus'] === true)
-      SomaButtonsHelper::googleplus_head($title,$description);
+    require SOMA_VIEWS_PATH . '/buttons/head.php';
   }
 }
