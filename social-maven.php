@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Social Maverick
-Plugin URI: http://blairwilliams.com/social-maverick
+Plugin Name: Social Maven
+Plugin URI: http://blairwilliams.com/social-maven
 Description: Super cool social media buttons that rock.
 Version: 0.0.1
 Author: Caseproof

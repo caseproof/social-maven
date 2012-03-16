@@ -1,11 +1,11 @@
-<h2><?php _e('Social Maverick'); ?></h2>
+<h2><?php _e('Social Maven'); ?></h2>
 <?php require SOMA_VIEWS_PATH . '/shared/errors.php'; ?>
 <form action="<?php echo admin_url('options-general.php?page=soma-options'); ?>" method="post">
   <input type="hidden" name="_wpnonce" value="<?php echo wp_create_nonce('SomaOptionsController::save'); ?>" />
   <input type="hidden" name="action" value="save" />
 
   <label for="<?php echo $soma_options->soma_enabled_str; ?>">
-    <input type="checkbox" name="<?php echo $soma_options->soma_enabled_str; ?>" id="<?php echo $soma_options->soma_enabled_str; ?>" <?php echo checked(true, $soma_options->soma_enabled); ?> />&nbsp;<?php _e('Enable Social Maverick'); ?><br/>
+    <input type="checkbox" name="<?php echo $soma_options->soma_enabled_str; ?>" id="<?php echo $soma_options->soma_enabled_str; ?>" <?php echo checked(true, $soma_options->soma_enabled); ?> />&nbsp;<?php _e('Enable Social Maven'); ?><br/>
   </label>
 
   <h3><?php _e('Where to Display Buttons:'); ?></h3>

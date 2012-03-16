@@ -7,7 +7,7 @@
 <div class="error">
   <ul>
   <?php foreach( $errors as $error ): ?>
-    <li><strong><?php _e('ERROR', 'social-maverick'); ?></strong>: <?php echo esc_html($error); ?></li>
+    <li><strong><?php _e('ERROR', 'social-maven'); ?></strong>: <?php echo esc_html($error); ?></li>
     <?php endforeach; ?>
   </ul>
 </div>

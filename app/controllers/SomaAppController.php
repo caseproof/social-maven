@@ -8,7 +8,7 @@ class SomaAppController {
   }
   
   public static function menu() {
-    $options_menu_hook = add_options_page(__('Social Maverick'), __('Social Maverick'), 'manage_options', 'soma-options', 'SomaOptionsController::render');
+    $options_menu_hook = add_options_page(__('Social Maven'), __('Social Maven'), 'manage_options', 'soma-options', 'SomaOptionsController::render');
     
     add_action('admin_print_scripts-'.$options_menu_hook, 'SomaAppController::load_admin_scripts');
     add_action('admin_print_styles-'.$options_menu_hook, 'SomaAppController::load_admin_styles');
@@ -34,6 +34,6 @@ class SomaAppController {
   {
     $path_from_plugins_folder = str_replace( ABSPATH, '', SOMA_PATH ) . '/i18n/';
     
-    load_plugin_textdomain( 'social-maverick', false, $path_from_plugins_folder );
+    load_plugin_textdomain( 'social-maven', false, $path_from_plugins_folder );
   }
 }

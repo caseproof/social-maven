@@ -25,7 +25,7 @@ class SomaOptions {
   }
 
   public function set_defaults() {
-    // Enable Social Maverick: true/false
+    // Enable Social Maven: true/false
     if(!isset($this->soma_enabled))
       $this->soma_enabled = false;
 
