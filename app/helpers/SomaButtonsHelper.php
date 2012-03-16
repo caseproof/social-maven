@@ -1,8 +1,8 @@
 <?php
 if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');}
 class SomaButtonsHelper {
-  public static function pintrest_button($url,$description,$media='',$layout='vertical') {
-    require SOMA_VIEWS_PATH . '/buttons/pintrest.php';
+  public static function pinterest_button($url,$description,$media='',$layout='vertical') {
+    require SOMA_VIEWS_PATH . '/buttons/pinterest.php';
   }
 
   public static function twitter_button($url,$description,$size='',$layout='vertical',$via='',$related='',$hashtags='',$counturl='') {

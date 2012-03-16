@@ -4,8 +4,6 @@
   <input type="hidden" name="_wpnonce" value="<?php echo wp_create_nonce('SomaOptionsController::save'); ?>" />
   <input type="hidden" name="action" value="save" />
 
-  <input type="submit" value="<?php _e('Save Options'); ?>" /><br/>
-
   <label for="<?php echo $soma_options->soma_enabled_str; ?>">
     <input type="checkbox" name="<?php echo $soma_options->soma_enabled_str; ?>" id="<?php echo $soma_options->soma_enabled_str; ?>" <?php echo checked(true, $soma_options->soma_enabled); ?> />&nbsp;<?php _e('Enable Social Maverick'); ?><br/>
   </label>
@@ -27,23 +25,25 @@
   <label for="<?php echo $soma_options->vertical_pos_str; ?>">
     <?php _e('Vertical position of buttons'); ?>
     <select name="<?php echo $soma_options->vertical_pos_str; ?>" id="<?php echo $soma_options->vertical_pos_str; ?>">
-      <option value='top' <?php echo selected('top',$soma_options->vertical_pos); ?>><?php _e('Top'); ?></option>
-      <option value='bottom' <?php echo selected('bottom',$soma_options->vertical_pos); ?>><?php _e('Bottom'); ?></option>
-      <option value='both' <?php echo selected('both',$soma_options->vertical_pos); ?>><?php _e('Both'); ?></option>
+      <option value='top' <?php echo selected('top',$soma_options->vertical_pos); ?>><?php _e('Top of content'); ?>&nbsp;</option>
+      <option value='bottom' <?php echo selected('bottom',$soma_options->vertical_pos); ?>><?php _e('Bottom of content'); ?>&nbsp;</option>
+      <option value='both' <?php echo selected('both',$soma_options->vertical_pos); ?>><?php _e('Top and bottom of content'); ?>&nbsp;</option>
     </select><br/>
   </label>
 
   <label for="<?php echo $soma_options->horizontal_pos_str; ?>">
     <?php _e('Horizontal position of buttons'); ?>
     <select name="<?php echo $soma_options->horizontal_pos_str; ?>" id="<?php echo $soma_options->horizontal_pos_str; ?>">
-      <option value='left' <?php echo selected('left',$soma_options->horizontal_pos); ?>><?php _e('Left'); ?></option>
-      <option value='right' <?php echo selected('right',$soma_options->horizontal_pos); ?>><?php _e('Right'); ?></option>
+      <option value='left' <?php echo selected('left',$soma_options->horizontal_pos); ?>><?php _e('Left aligned'); ?>&nbsp;</option>
+      <option value='right' <?php echo selected('right',$soma_options->horizontal_pos); ?>><?php _e('Right aligned'); ?>&nbsp;</option>
     </select><br/>
   </label>
 
+  <?php /*
   <label for="<?php echo $soma_options->wrap_str; ?>">
     <input type="checkbox" name="<?php echo $soma_options->wrap_str; ?>" id="<?php echo $soma_options->wrap_str; ?>" <?php echo checked(true, $soma_options->wrap); ?> />&nbsp;<?php _e('Text Wrap'); ?><br/>
   </label>
+  */ ?>
 
   <h3><?php _e('Enabled Buttons:'); ?></h3>
   <label for="<?php echo $soma_options->facebook_str; ?>">
@@ -70,8 +70,8 @@
   <label for="<?php echo $soma_options->button_style_str; ?>">
     <?php _e('Button style'); ?>
     <select name="<?php echo $soma_options->button_style_str; ?>" id="<?php echo $soma_options->button_style_str; ?>">
-      <option value='horizontal' <?php echo selected('horizontal',$soma_options->button_style); ?>><?php _e('Horizontal'); ?></option>
-      <option value='vertical' <?php echo selected('vertical',$soma_options->button_style); ?>><?php _e('Vertical'); ?></option>
+      <option value='horizontal' <?php echo selected('horizontal',$soma_options->button_style); ?>><?php _e('Horizontal'); ?>&nbsp;</option>
+      <option value='vertical' <?php echo selected('vertical',$soma_options->button_style); ?>><?php _e('Vertical'); ?>&nbsp;</option>
     </select><br/>
   </label>
 
@@ -79,5 +79,6 @@
     <input type="checkbox" name="<?php echo $soma_options->button_counts_str; ?>" id="<?php echo $soma_options->button_counts_str; ?>" <?php echo checked(true, $soma_options->button_counts); ?> />&nbsp;<?php _e('Show Button Counts'); ?><br/>
   </label>
 
+  <br/>
   <input type="submit" value="<?php _e('Save Options'); ?>" />
 </form>

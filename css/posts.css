@@ -1,0 +1,22 @@
+.soma-buttons {
+  padding: 0px;
+  margin: 0px;
+}
+
+.soma-alignleft {
+  float: left;
+  padding-right: 10px;
+}
+
+.soma-alignright {
+  float: right;
+  padding-left: 10px;
+}
+
+.soma-valigntop {
+  padding-bottom: 5px;
+}
+
+.soma-valignbottom {
+  padding-top: 5px;
+}
