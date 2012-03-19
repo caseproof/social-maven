@@ -69,11 +69,13 @@ class SomaOptions {
 
     // Button Style: horizontal, vertical
     if(!isset($this->button_style))
-      $this->button_style = 'horizontal';
+      $this->button_style = 'basic';
 
     // Button Counts: true/false
+    /*
     if(!isset($this->button_counts))
       $this->button_counts = true;
+    */
   }
 
   private function set_strings() {
@@ -90,7 +92,7 @@ class SomaOptions {
     $this->linkedin_str = 'linkedin';
     $this->googleplus_str = 'googleplus';
     $this->button_style_str = 'button_style';
-    $this->button_counts_str = 'button_counts';
+    //$this->button_counts_str = 'button_counts';
   }
   
   public function set_from_array($options=array(), $post_array=false) {

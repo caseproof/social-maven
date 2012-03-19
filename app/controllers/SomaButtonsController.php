@@ -27,10 +27,20 @@ class SomaButtonsController {
       else if( $soma_options->vertical_pos=='bottom' )
         $classes .= " soma-valignbottom";
       
-      if( $soma_options->button_style=='horizontal' ) {
+      if( $soma_options->button_style=='basic' ) {
+        $facebook_layout = 'standard';
+        $twitter_layout = 'none';
+        $linkedin_layout = 'none';
+        $pinterest_layout = 'none';
+        $googleplus_layout = 'medium';
+        $googleplus_annotation = 'none';
+        $classes .= " soma-basic";
+      }
+      else if( $soma_options->button_style=='horizontal' ) {
         $facebook_layout = 'button_count';
         $twitter_layout = 'horizontal';
         $googleplus_layout = 'medium';
+        $googleplus_annotation = 'bubble';
         $linkedin_layout = 'right';
         $pinterest_layout = 'horizontal';
         $classes .= " soma-horizontal";
@@ -39,22 +49,12 @@ class SomaButtonsController {
         $facebook_layout = 'box_count';
         $twitter_layout = 'vertical';
         $googleplus_layout = 'tall';
+        $googleplus_annotation = 'bubble';
         $linkedin_layout = 'top';
         $pinterest_layout = 'vertical';
         $classes .= " soma-vertical";
       }
       
-      if( $soma_options->button_counts ) {
-        $googleplus_annotation = 'bubble';
-      }
-      else {
-        $googleplus_annotation = 'none';
-        $facebook_layout = 'standard';
-        $twitter_layout = 'none';
-        $linkedin_layout = 'none';
-        $pinterest_layout = 'none';
-        $classes .= " soma-nocount";
-      }
       
       $url = get_permalink($post->ID);
       $description = $post->post_title;
