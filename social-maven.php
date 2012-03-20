@@ -79,3 +79,4 @@ $soma_options = SomaOptions::fetch();
 
 SomaAppController::load_hooks();
 SomaButtonsController::load_hooks();
+SomaPostsController::load_hooks();

@@ -14,8 +14,9 @@ class SomaButtonsController {
         ( $soma_options->display_on_posts and $post->post_type == 'post' ) or
         ( $soma_options->display_on_pages and $post->post_type == 'page' ) or
         ( $soma_options->display_on_cpts and 
-          !in_array( $post->post_type, array( 'page', 'post', 'revision', 'attachment', 'nav_menu_item' ) ) ) ) {
+          !in_array( $post->post_type, SomaUtils::default_cpts() ) ) ) {
       
+      $post_options = SomaPostOptions::fetch($post->ID);
       $classes = "soma-buttons";
       if( $soma_options->horizontal_pos=='left' )
         $classes .= " soma-alignleft";
