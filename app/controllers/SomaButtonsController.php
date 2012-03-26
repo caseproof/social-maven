@@ -60,8 +60,20 @@ class SomaButtonsController {
         $classes .= " soma-vertical";
       }
       
+      if(!function_exists('is_plugin-active'))
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
       
-      $url = get_permalink($post->ID);
+      if(is_plugin_active("pretty-link/pretty-link.php")) {
+        global $prli_update;
+        if($prli_update->pro_is_installed_and_authorized()) {
+          $link_id = PrliUtils::get_prli_post_meta($post->ID,'_pretty-link',true);
+          $count_url = get_permalink($post->ID);
+          $url = $link_id?prli_get_pretty_link_url($link_id):$count_url;
+        }
+      }
+      else
+        $url = $count_url = get_permalink($post->ID);
+      
       $description = $post->post_title;
       
       ob_start();

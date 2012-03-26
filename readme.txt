@@ -6,13 +6,16 @@ Requires at least: 3.3.1
 Tested up to: 3.3.1
 Stable tag: 1.0.0
 
-Add the most popular social media buttons to your pages, posts and custom post types.
+Simply adds the most popular social media buttons to your pages, posts and custom post types.
 
 == Description ==
 
 Social Maven makes it easy to add the most popular social media buttons to your site.
 
 Social Maven is extremely easy to install and setup. It correctly adds social buttons to your pages, posts and/or custom post types. It also allows you to specify where they will display on the page what buttons will display, and how the buttons will be styled.
+
+= Compatible with Pretty Link Pro =
+Use [Pretty Link Pro](http://prettylinkpro.com "Pretty Link Pro") to automatically shrink and track any of the links you share with Social Maven.
 
 = Features =
 

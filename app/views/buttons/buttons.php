@@ -2,7 +2,7 @@
 <div class="<?php echo esc_html($classes); ?>">
   <?php
   if(isset($soma_options->twitter) and $soma_options->twitter)
-    SomaButtonsHelper::twitter_button($url,$description,'',$twitter_layout);
+    SomaButtonsHelper::twitter_button($url,$description,'',$twitter_layout,'','','',$count_url);
   if(isset($soma_options->googleplus) and $soma_options->googleplus)
     SomaButtonsHelper::googleplus_button($url,$googleplus_layout,$googleplus_annotation);
   if(isset($soma_options->linkedin) and $soma_options->linkedin)
