@@ -18,10 +18,14 @@ class SomaButtonsController {
       
       $post_options = SomaPostOptions::fetch($post->ID);
       $classes = "soma-buttons";
-      if( $soma_options->horizontal_pos=='left' )
+      if( $soma_options->wrap and $soma_options->horizontal_pos=='left' )
         $classes .= " soma-alignleft";
-      else if( $soma_options->horizontal_pos=='right' )
+      else if( $soma_options->wrap and $soma_options->horizontal_pos=='right' )
         $classes .= " soma-alignright";
+      else if( !$soma_options->wrap and $soma_options->horizontal_pos=='left' )
+        $classes .= " soma-alignleft-clear";
+      else if( !$soma_options->wrap and $soma_options->horizontal_pos=='right' )
+        $classes .= " soma-alignright-clear";
       
       if( $soma_options->vertical_pos=='top' )
         $classes .= " soma-valigntop";

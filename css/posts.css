@@ -1,6 +1,7 @@
 .soma-buttons {
   padding: 0;
   margin: 5px 0 0 0;
+  clear: all;
 }
 
 .soma-alignleft {
@@ -11,6 +12,16 @@
 .soma-alignright {
   float: right;
   padding-left: 10px;
+}
+
+.soma-alignleft-clear {
+  text-align: left;
+  clear: both;
+}
+
+.soma-alignright-clear {
+  text-align: left;
+  clear: both;
 }
 
 .soma-valigntop {
