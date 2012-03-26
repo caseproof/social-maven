@@ -2,8 +2,8 @@
 /*
 Plugin Name: Social Maven
 Plugin URI: http://blairwilliams.com/social-maven
-Description: Super cool social media buttons that rock.
-Version: 1.0.0rc1
+Description: Simply adds the most popular social media buttons to your pages, posts and custom post types.
+Version: 1.0.0
 Author: Caseproof
 Author URI: http://caseproof.com
 Copyright: 2004-2012, Caseproof, LLC
