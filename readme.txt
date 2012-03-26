@@ -22,8 +22,8 @@ Use [Pretty Link Pro](http://prettylinkpro.com "Pretty Link Pro") to automatical
 * Add Twitter, Facebook, LinkedIn, Google+ and/or Pinterest Buttons to your site
 * Change the style of your buttons -- currently supports basic (no count), horizontal (with count) and vertical (with count) on all buttons.
 * Change where the buttons are displayed (currently supports display on Posts, Pages and Custom Post Types)
-* Adds appropriate metadata to your post headers for the Google+ and Facebook butons
-* Gives you the abilitity to specify the image to pass to Pinterest for each post.
+* Adds appropriate metadata to your post headers for the Google+ and Facebook buttons
+* Gives you the ability to specify the image to pass to Pinterest for each post.
 
 == Installation ==
 
