@@ -11,12 +11,12 @@ class SomaPostsController {
 
     if($soma_options->display_on_posts) {
       if($soma_options->pinterest)
-        add_meta_box( 'social-maven-pinterest', __('Social Maven: Pinterest Image'), 'SomaPostsController::pinterest_meta_box', 'post', 'side', 'high' );
+        add_meta_box( 'social-maven-pinterest', __('Social Maven: Pinterest Image', 'social-maven'), 'SomaPostsController::pinterest_meta_box', 'post', 'side', 'high' );
     }
 
     if($soma_options->display_on_pages) {
       if($soma_options->pinterest)
-        add_meta_box( 'social-maven-pinterest', __('Social Maven: Pinterest Image'), 'SomaPostsController::pinterest_meta_box', 'page', 'side', 'high' );
+        add_meta_box( 'social-maven-pinterest', __('Social Maven: Pinterest Image', 'social-maven'), 'SomaPostsController::pinterest_meta_box', 'page', 'side', 'high' );
     }
 
     if($soma_options->display_on_cpts) {
@@ -24,7 +24,7 @@ class SomaPostsController {
       foreach($cpts as $cpt) {
         if(!in_array( $cpt, SomaUtils::default_cpts() ) ) {
           if($soma_options->pinterest)
-            add_meta_box( 'social-maven-pinterest', __('Social Maven: Pinterest Image'), 'SomaPostsController::pinterest_meta_box', $cpt, 'side', 'high' );
+            add_meta_box( 'social-maven-pinterest', __('Social Maven: Pinterest Image', 'social-maven'), 'SomaPostsController::pinterest_meta_box', $cpt, 'side', 'high' );
         }
       }
     }

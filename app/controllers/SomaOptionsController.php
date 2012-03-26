@@ -3,7 +3,7 @@ if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');
 class SomaOptionsController {
   public static function render() {
     if(!current_user_can('manage_options'))
-      wp_die( __('You do not have sufficient permissions to access this page.') );
+      wp_die( __('You do not have sufficient permissions to access this page.', 'social-maven') );
     
     if( isset($_REQUEST['action']) and
         $_REQUEST['action']=='save' and
@@ -33,7 +33,7 @@ class SomaOptionsController {
     
     if( empty($errors) ) {
       $soma_options = SomaOptions::fetch(); // re-fetch
-      $message = __('Your options were saved successfully'); 
+      $message = __('Your options were saved successfully', 'social-maven'); 
       require SOMA_VIEWS_PATH . '/options/form.php';
     }
     else
@@ -43,7 +43,7 @@ class SomaOptionsController {
   public static function reset() {
     global $soma_options;
     SomaOptions::reset();
-    $message = __('Your options have successfully been reset');
+    $message = __('Your options have successfully been reset', 'social-maven');
     require SOMA_VIEWS_PATH . '/options/form.php';
   }
 }

@@ -8,7 +8,7 @@ class SomaAppController {
   }
   
   public static function menu() {
-    $options_menu_hook = add_options_page(__('Social Maven'), __('Social Maven'), 'manage_options', 'soma-options', 'SomaOptionsController::render');
+    $options_menu_hook = add_options_page(__('Social Maven', 'social-maven'), __('Social Maven', 'social-maven'), 'manage_options', 'soma-options', 'SomaOptionsController::render');
     
     add_action('admin_print_scripts-'.$options_menu_hook, 'SomaAppController::load_admin_options_scripts');
     add_action('admin_print_styles-'.$options_menu_hook, 'SomaAppController::load_admin_options_styles');
