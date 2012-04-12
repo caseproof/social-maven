@@ -4,7 +4,7 @@ Donate link: http://prettylinkpro.com
 Tags: social, buttons, counts, clicks, links, link, share, post, posts, admin, twitter, facebook, google+, pinterest, linkedin
 Requires at least: 3.3.1
 Tested up to: 3.3.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 Simply adds the most popular social media buttons to your pages, posts and custom post types.
 
@@ -35,10 +35,16 @@ Use [Pretty Link Pro](http://prettylinkpro.com "Pretty Link Pro") to automatical
 
 == Changelog ==
 
+= 1.0.1 =
+* Fixed a conflict between the wordpress post editor and the pinterest featured image selector
+
 = 1.0.0 =
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+* Contains an important fix for people who want to use Social Maven and be able to insert images into their posts with the wordpress media uploader.
 
 = 1.0.0 =
 * This is the initial release of Social Maven on the WordPress.org plugin repository
