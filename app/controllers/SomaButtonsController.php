@@ -9,8 +9,10 @@ class SomaButtonsController {
   
   public static function render($content) {
     global $post, $soma_options;
-    
-    if( $soma_options->soma_enabled and
+
+    if( get_post_status($post->ID) == 'publish' and
+        !is_feed() and !is_home() and
+        $soma_options->soma_enabled and
         ( $soma_options->display_on_posts and $post->post_type == 'post' ) or
         ( $soma_options->display_on_pages and $post->post_type == 'page' ) or
         ( $soma_options->display_on_cpts and 
